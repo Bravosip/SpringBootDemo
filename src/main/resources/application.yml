@@ -1,0 +1,6 @@
+server:
+  servlet:
+    context-path:/demo
+    application-display-name: spingboot-demo
+    port:8080
+
