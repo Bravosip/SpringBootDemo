@@ -1,6 +1,10 @@
 server:
+  port: 8080
   servlet:
-    context-path:/demo
-    application-display-name: spingboot-demo
-    port:8080
-
+    context-path: /demo
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.248.128
+    username: root
+    password: Admin-123
