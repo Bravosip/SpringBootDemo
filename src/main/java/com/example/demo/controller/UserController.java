@@ -3,6 +3,10 @@ package com.example.demo.controller;
 import com.example.demo.dto.JsonResult;
 import com.example.demo.dto.User;
 import com.example.demo.service.UserService;
+import com.example.demo.util.IdMaker;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.slf4j.MDC;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,6 +15,8 @@ import java.util.List;
 
 @RestController
 public class UserController {
+
+    private Logger logger = LoggerFactory.getLogger(this.getClass());
     @Autowired
     private UserService userService;
     /**
@@ -21,7 +27,10 @@ public class UserController {
     public ResponseEntity<JsonResult> getUserById (@PathVariable(value = "id") Integer id){
         JsonResult r = new JsonResult();
         try {
+            MDC.put("flowid",IdMaker.generate());
+            logger.info("根据ID查询用户,id="+id);
             User user = userService.getUserById(id);
+            logger.info("根据ID查询用户,结果:"+user);
             r.setResult(user);
             r.setStatus("ok");
         } catch (Exception e) {
