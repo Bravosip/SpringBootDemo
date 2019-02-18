@@ -1,4 +1,4 @@
-package com.example.demo.util;
+package com.example.demo.log.util;
 
 import java.text.SimpleDateFormat;
 import java.util.HashSet;

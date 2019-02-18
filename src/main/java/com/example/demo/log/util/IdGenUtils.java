@@ -1,4 +1,4 @@
-package com.example.demo.util;
+package com.example.demo.log.util;
 
 /**
  * 这个类的调用简化了一下，实际使用中还是应该根据机器节点和数据中心节点来配置相关的参数。

@@ -3,7 +3,7 @@ package com.example.demo.controller;
 import com.example.demo.dto.JsonResult;
 import com.example.demo.dto.User;
 import com.example.demo.service.UserService;
-import com.example.demo.util.IdMaker;
+import com.example.demo.log.util.IdMaker;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.slf4j.MDC;

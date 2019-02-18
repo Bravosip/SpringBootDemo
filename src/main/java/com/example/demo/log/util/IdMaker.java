@@ -1,4 +1,4 @@
-package com.example.demo.util;
+package com.example.demo.log.util;
 
 import java.net.Inet4Address;
 import java.net.InetAddress;
