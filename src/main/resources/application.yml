@@ -8,3 +8,5 @@ spring:
     url: jdbc:mysql://60.205.189.104:3306/db0926?useSSL=false
     username: db001
     password: ysdss1991
+mybatis:
+  type-aliases-package:com.example.demo.dto

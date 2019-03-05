@@ -4,6 +4,8 @@ import com.example.demo.dto.JsonResult;
 import com.example.demo.dto.User;
 import com.example.demo.service.UserService;
 import com.example.demo.log.util.IdMaker;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiOperation;
 import lombok.extern.log4j.Log4j;
 import org.slf4j.MDC;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +24,8 @@ public class UserController {
      * 根据ID查询用户
      * @param id
      * @return	 */
+    @ApiOperation(value="获取用户详细信息", notes="根据url的id来获取用户详细信息")
+    @ApiImplicitParam(name = "id", value = "用户ID", required = true, dataType = "Integer", paramType = "path")
     @RequestMapping(value = "user/{id}", method = RequestMethod.GET)
     public ResponseEntity<JsonResult> getUserById (@PathVariable(value = "id") Integer id){
         JsonResult r = new JsonResult();
@@ -44,6 +48,7 @@ public class UserController {
      * 查询用户列表
      * @return
      */
+    @ApiOperation(value="获取用户列表", notes="获取用户列表")
     @RequestMapping(value = "users", method = RequestMethod.GET)
     public ResponseEntity<JsonResult> getUserList (){
         JsonResult r = new JsonResult();
